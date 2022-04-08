@@ -1,0 +1,22 @@
+{
+  "pages": [
+    "pages/login/login",
+    "pages/config/device",
+    "pages/oper/oper",
+    "pages/player/live",
+    "pages/player/playBack",
+    "pages/player/verify"
+  ],
+  "subPackages": [],
+  "window": {
+    "navigationBarBackgroundColor": "#00aaff",
+    "backgroundColor": "#F8F8F8"
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "获取wifi列表"
+    }
+  },
+  "usingComponents": {},
+  "sitemapLocation": "sitemap.json"
+}

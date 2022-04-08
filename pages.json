@@ -1,0 +1,44 @@
+{
+	"easycom": {
+			"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+		},
+		
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+            "path" : "pages/login/login",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "终端设备管理"
+            }
+        },{
+			"path": "pages/config/device",
+			"style": {
+				"navigationBarTitleText": "选择你要连接的蓝牙设备"
+			}
+		},{
+			"path": "pages/oper/oper",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/player/live",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/player/playBack",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		},{
+			"path": "pages/player/verify",
+			"style": {
+				"navigationStyle": "custom"
+			}
+		}
+    ],
+	"globalStyle": {
+		"navigationBarBackgroundColor": "#00aaff",
+		"backgroundColor": "#F8F8F8"
+	}
+}

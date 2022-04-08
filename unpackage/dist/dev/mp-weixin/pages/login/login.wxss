@@ -1,0 +1,27 @@
+
+page{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+}
+.main{
+	display:flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	align-items: center;
+	margin-top: 100rpx;
+}
+.text{
+	color: #00aaff;
+}
+.input{
+	margin-top: 30rpx;
+	border: 1rpx solid #007AFF;
+	text-align: center;
+	width: 70%;
+}
+.button{
+	margin-top: 30rpx;
+	width: 80%;
+}
+

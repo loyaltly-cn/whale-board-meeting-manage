@@ -1,0 +1,21 @@
+
+page{
+	background-color: #cfcfcf;
+	text-align: center;
+}
+.SmartScreen{
+	background-color: #ffffff;
+	margin: 0 auto;
+}
+.slider{
+	/* background-color: #ffffff; */
+}
+.count{
+	display: flex;
+	justify-content:space-around;
+}
+.menu{
+	display: flex;
+	justify-content:space-around;
+}
+

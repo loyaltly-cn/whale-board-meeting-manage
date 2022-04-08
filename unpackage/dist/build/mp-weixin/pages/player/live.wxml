@@ -1,0 +1,1 @@
+<view><view hidden="{{!(show)}}" class="main"><canvas class="SmartScreen" style="{{(canvasStyle)}}" canvas-id="SmartScreen"></canvas></view></view>

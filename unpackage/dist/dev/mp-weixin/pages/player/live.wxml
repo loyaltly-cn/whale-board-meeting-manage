@@ -1,0 +1,1 @@
+<view><uni-nav-bar vue-id="7bc080b5-1" shadow="{{true}}" title="直播" color="#ffffff" background-color="#00aaff" fixed="{{true}}" statusBar="{{true}}" bind:__l="__l"></uni-nav-bar><view hidden="{{!(show)}}" class="main"><canvas class="SmartScreen" style="{{(canvasStyle)}}" canvas-id="SmartScreen"></canvas></view></view>

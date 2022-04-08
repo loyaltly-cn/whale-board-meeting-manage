@@ -1,0 +1,1 @@
+<view class="main"><text class="text">请输入管理密码</text><input class="input" password="{{true}}" type="text" placeholder="默认为0000" data-event-opts="{{[['input',[['__set_model',['','pwd','$event',[]]]]]]}}" value="{{pwd}}" bindinput="__e"/><button class="button" type="primary" data-event-opts="{{[['tap',[['verify']]]]}}" bindtap="__e">login</button></view>

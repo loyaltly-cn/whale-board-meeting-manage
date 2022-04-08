@@ -1,0 +1,9 @@
+{
+  "dependencies": {
+    "moment": "^2.29.1",
+    "uview-ui": "^2.0.28"
+  },
+  "devDependencies": {
+    "sass-loader": "^12.6.0"
+  }
+}

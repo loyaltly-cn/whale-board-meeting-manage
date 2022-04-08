@@ -1,0 +1,17 @@
+{
+    "pages": [
+        "pages/login/login",
+        "pages/oper/oper",
+        "pages/test/test",
+        "pages/player/live",
+        "pages/player/playBack"
+    ],
+    "subPackages": [],
+    "window": {
+        "navigationBarBackgroundColor": "#00aaff",
+        "backgroundColor": "#F8F8F8"
+    },
+    "permission": {},
+    "usingComponents": {},
+    "sitemapLocation": "sitemap.json"
+}
