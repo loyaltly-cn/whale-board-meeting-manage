@@ -1,4 +1,6 @@
 {
   "navigationBarTitleText": "终端设备管理",
-  "usingComponents": {}
+  "usingComponents": {
+    "u-notify": "/uni_modules/uview-ui/components/u-notify/u-notify"
+  }
 }

@@ -17,6 +17,5 @@
       "desc": "获取wifi列表"
     }
   },
-  "usingComponents": {},
-  "sitemapLocation": "sitemap.json"
+  "usingComponents": {}
 }

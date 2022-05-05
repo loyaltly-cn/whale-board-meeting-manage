@@ -93,6 +93,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "recyclableRender", function() { return recyclableRender; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "components", function() { return components; });
 var components
+try {
+  components = {
+    uNotify: function() {
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-notify/u-notify */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-notify/u-notify")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-notify/u-notify.vue */ 576))
+    }
+  }
+} catch (e) {
+  if (
+    e.message.indexOf("Cannot find module") !== -1 &&
+    e.message.indexOf(".vue") !== -1
+  ) {
+    console.error(e.message)
+    console.error("1. 排查组件名称拼写是否正确")
+    console.error(
+      "2. 排查组件是否符合 easycom 规范，文档：https://uniapp.dcloud.net.cn/collocation/pages?id=easycom"
+    )
+    console.error(
+      "3. 若组件不符合 easycom 规范，需手动引入，并在 components 中注册该组件"
+    )
+  } else {
+    throw e
+  }
+}
 var render = function() {
   var _vm = this
   var _h = _vm.$createElement
@@ -138,6 +161,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
 var _default =
 {
   data: function data() {
@@ -162,7 +186,7 @@ var _default =
                 pwd.length == 0)) {_context.next = 5;break;}
                 uni.showToast({
                   title: '请输入密码',
-                  icon: 'error' });_context.next = 10;break;case 5:
+                  icon: 'error' });_context.next = 11;break;case 5:
 
 
                 uni.showLoading();_context.next = 8;return (
@@ -174,6 +198,7 @@ var _default =
                       password: pwd } }));case 8:res = _context.sent;
 
 
+                console.log(res);
                 if (res.data.length != 0) {
                   getApp().globalData.did = res.data[0].id;
                   uni.redirectTo({
@@ -184,7 +209,7 @@ var _default =
                     title: '密码错误',
                     icon: 'error' });
 
-                }case 10:case "end":return _context.stop();}}}, _callee);}))();
+                }case 11:case "end":return _context.stop();}}}, _callee);}))();
 
 
     } } };exports.default = _default;

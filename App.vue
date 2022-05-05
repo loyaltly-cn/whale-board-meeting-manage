@@ -21,6 +21,7 @@
 			snapShotList:null
 			startTimeStamp:0
 			endTimeStamp:0
+			tagList:[]
 		}
 	}
 </script>

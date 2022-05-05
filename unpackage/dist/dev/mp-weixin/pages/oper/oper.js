@@ -104,14 +104,14 @@ try {
     uIcon: function() {
       return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 370))
     },
+    uTag: function() {
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-tag/u-tag */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-tag/u-tag")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-tag/u-tag.vue */ 429))
+    },
     uCellGroup: function() {
       return Promise.all(/*! import() | uni_modules/uview-ui/components/u-cell-group/u-cell-group */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-cell-group/u-cell-group")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-cell-group/u-cell-group.vue */ 354))
     },
     uCell: function() {
       return Promise.all(/*! import() | uni_modules/uview-ui/components/u-cell/u-cell */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-cell/u-cell")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-cell/u-cell.vue */ 362))
-    },
-    "u-Image": function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u--image/u--image */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u--image/u--image")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u--image/u--image.vue */ 429))
     },
     "u-Text": function() {
       return Promise.all(/*! import() | uni_modules/uview-ui/components/u--text/u--text */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u--text/u--text")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u--text/u--text.vue */ 395))
@@ -248,6 +248,23 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 var _default =
 {
   data: function data() {
@@ -258,34 +275,38 @@ var _default =
       noteText: '',
       tmpIndex: 0,
       update: false,
-      updatepwdText: null };
+      updatepwdText: null,
+      tagList: [],
+      tagUpdateShow: false,
+      currentTagId: null,
+      currentTagText: null,
+      currentTagIndex: null };
 
   },
   onShareAppMessage: function onShareAppMessage(res) {var _this = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee() {var index, sid, playType, url, _res, code, did;return _regenerator.default.wrap(function _callee$(_context) {while (1) {switch (_context.prev = _context.next) {case 0:
               index = res.target.dataset.index.index;
               sid = _this.list[index].sid;
               playType = _this.list[index].playType;
-              url = 'https://api.bj-jiuqi.com/SmartScreen/#/?sid=' + sid;
-              console.log(playType);if (!(
-              playType == 'live')) {_context.next = 14;break;}
-              getApp().globalData.sid = sid;_context.next = 9;return (
-                _this.$meetingAuth());case 9:_context.next = 11;return (
+              url = 'https://web.loyal.pub/meeting/#/?mid=' + sid;if (!(
+              playType == 'live')) {_context.next = 13;break;}
+              getApp().globalData.sid = sid;_context.next = 8;return (
+                _this.$meetingAuth());case 8:_context.next = 10;return (
                 _this.$http({
                   url: 'tmpCode',
                   method: 'POST',
                   data: {
-                    token: getApp().globalData.token } }));case 11:_res = _context.sent;
+                    token: getApp().globalData.token } }));case 10:_res = _context.sent;
 
 
               code = _res.data;
-              url = 'https://api.bj-jiuqi.com/SmartScreen/#/ 【临时会议号为:' + code + '】';case 14:
+              url = 'https://web.loyal.pub/meeting/#/ 【临时会议号为:' + code + '】';case 13:
 
               did = getApp().globalData.did;return _context.abrupt("return",
 
               {
-                title: '网址:' + url,
+                title: url,
                 path: '/pages/player/verify?sid=' + sid + '&mac=' + getApp().globalData.mac,
-                imageUrl: 'https://xinxuemo-images.oss-cn-shanghai.aliyuncs.com/img.png' });case 16:case "end":return _context.stop();}}}, _callee);}))();
+                imageUrl: 'https://xinxuemo-images.oss-cn-shanghai.aliyuncs.com/img.png' });case 15:case "end":return _context.stop();}}}, _callee);}))();
 
 
   },
@@ -310,7 +331,7 @@ var _default =
                     note: data.note + ' 【会议进行中】',
                     playType: 'live',
                     sid: data.id,
-                    icon: 'https://xinxuemo-images.oss-cn-shanghai.aliyuncs.com/live.png' });
+                    icon: 'https://smartscreen-static.oss-cn-shanghai.aliyuncs.com/img/live.png' });
 
                 } else {
                   that.list.unshift({
@@ -318,11 +339,20 @@ var _default =
                     note: data.note + ' 【已结束】',
                     playType: 'playBack',
                     sid: data.id,
-                    icon: 'https://xinxuemo-images.oss-cn-shanghai.aliyuncs.com/meeting.png' });
+                    icon: 'https://smartscreen-static.oss-cn-shanghai.aliyuncs.com/img/meeting.png' });
 
                 }
 
-              });case 6:case "end":return _context2.stop();}}}, _callee2);}))();
+              });_context2.next = 8;return (
+
+                _this2.$http({
+                  url: 'tagDPQM',
+                  method: 'POST',
+                  data: {
+                    did: getApp().globalData.did } }));case 8:res = _context2.sent;
+
+
+              _this2.tagList = res.data;case 10:case "end":return _context2.stop();}}}, _callee2);}))();
   },
   methods: {
     note: function note(index) {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
@@ -406,6 +436,32 @@ var _default =
     touchEnd: function touchEnd(event) {
       console.log('end');
       // console.log(event.changedTouches[0].clientX);
+    },
+    touchTag: function touchTag(index) {
+      this.currentTagText = this.tagList[index].text;
+      this.currentTagId = this.tagList[index].id;
+      this.currentTagIndex = index;
+      this.tagUpdateShow = true;
+    },
+    updateTag: function updateTag() {var _this6 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6() {var res;return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:
+                _this6.tagUpdateShow = false;_context6.next = 3;return (
+                  _this6.$http({
+                    url: 'tags',
+                    method: 'PUT',
+                    data: {
+                      id: _this6.currentTagId,
+                      text: _this6.currentTagText,
+                      did: getApp().globalData.did } }));case 3:res = _context6.sent;
+
+
+
+                if (res.code) {
+                  _this6.$refs.uToast.show({
+                    message: 'ok',
+                    type: 'success' });
+
+                  _this6.tagList[_this6.currentTagIndex].text = _this6.currentTagText;
+                }case 5:case "end":return _context6.stop();}}}, _callee6);}))();
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

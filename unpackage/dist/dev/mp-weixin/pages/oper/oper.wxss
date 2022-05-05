@@ -13,4 +13,19 @@
 .input{
 	background-color: "#ffffff";
 }
+.img{
+	width: 100rpx;
+	height: 100rpx;
+}
+.tag{
+	display: flex;
+	justify-content: space-around;
+	margin-top: 2%;
+	margin-bottom: 2%;
+}
+.popupUpdateTagText{
+	margin-top: 2%;
+	margin-right: 2%;
+	margin-bottom: 2%;
+}
 

@@ -6,10 +6,15 @@
 				<u-icon @click="popup=true" name="more-dot-fill" color="#ffffff" size="50"></u-icon>
 			</view>
 		</uni-nav-bar>
+		<view class="tag">
+			<view v-for="(item,index) in tagList">
+				<u-tag @click="touchTag(index)" :text="item.text" type="primary" shape="circle" :plain="true" ></u-tag>
+			</view>
+		</view>
 		<u-cell-group v-for="(item,index) in list">
-			<u-cell   :title="item.note"  >
+			<u-cell :title="item.note"  >
 				<view slot="title" class="cellLeft">
-					<u--image  width="40px" height="40px" :src="item.icon"></u--image>
+					<image class="img" :src="item.icon" mode=""></image>
 					<view class="cellText">
 						<text @click="note(index)">{{item.note}}</text>
 						<u--text size="25" type="info" :text="item.time"></u--text>
@@ -53,6 +58,18 @@
 				  ></u--input>
 			</view>	
 		</u-popup>
+		<u-popup :show="tagUpdateShow" @close="updateTag()" mode="center" round="30">
+			<view class="popupUpdateTagText">
+				 <u--input
+					placeholder="请输入名称"
+					:focus="true"
+					inputAlign="center"
+					v-model="currentTagText"
+				    border="none"
+				    clearable
+				  ></u--input>
+			</view>
+		</u-popup>
 	</view>
 </template> 
 
@@ -66,15 +83,19 @@
 				noteText:'',
 				tmpIndex:0,
 				update:false,
-				updatepwdText:null
+				updatepwdText:null,
+				tagList:[],
+				tagUpdateShow:false,
+				currentTagId:null,
+				currentTagText:null,
+				currentTagIndex:null
 			}
 		},
 		async onShareAppMessage(res) {
 			let index = res.target.dataset.index.index
 			let sid = this.list[index].sid
 			let playType = this.list[index].playType
-			let url = 'https://api.bj-jiuqi.com/SmartScreen/#/?sid='+sid
-			console.log(playType);
+			let url = 'https://web.loyal.pub/meeting/#/?mid='+sid
 			if (playType == 'live'){
 				getApp().globalData.sid = sid
 				await this.$meetingAuth()
@@ -86,12 +107,12 @@
 					}
 				})
 				let code = res.data
-				url = 'https://api.bj-jiuqi.com/SmartScreen/#/ 【临时会议号为:'+code+'】'
+				url = 'https://web.loyal.pub/meeting/#/ 【临时会议号为:'+code+'】'
 			}
 			let did = getApp().globalData.did
 			
 			return{
-				title:'网址:'+url,
+				title:url,
 				path:'/pages/player/verify?sid='+sid+'&mac='+getApp().globalData.mac,
 				imageUrl:'https://xinxuemo-images.oss-cn-shanghai.aliyuncs.com/img.png'
 			}
@@ -118,7 +139,7 @@
 						note:data.note+' 【会议进行中】',
 						playType:'live',
 						sid:data.id,
-						icon:'https://xinxuemo-images.oss-cn-shanghai.aliyuncs.com/live.png'
+						icon:'https://smartscreen-static.oss-cn-shanghai.aliyuncs.com/img/live.png'
 					})
 				}else{
 					that.list.unshift({
@@ -126,11 +147,20 @@
 						note:data.note+' 【已结束】',
 						playType:'playBack',
 						sid:data.id,
-						icon:'https://xinxuemo-images.oss-cn-shanghai.aliyuncs.com/meeting.png'
+						icon:'https://smartscreen-static.oss-cn-shanghai.aliyuncs.com/img/meeting.png'
 					})
 				}
 				
 			})
+			
+			res = await this.$http({
+				url:'tagDPQM',
+				method:'POST',
+				data:{
+					did:getApp().globalData.did
+				}
+			})
+			this.tagList = res.data
 		},
 		methods: {
 			async note(index){
@@ -214,6 +244,32 @@
 			touchEnd(event){
 				console.log('end');
 				// console.log(event.changedTouches[0].clientX);
+			},
+			touchTag(index){
+				this.currentTagText = this.tagList[index].text
+				this.currentTagId = this.tagList[index].id
+				this.currentTagIndex = index
+				this.tagUpdateShow = true
+			},
+			async updateTag(){
+				this.tagUpdateShow = false
+				let res = await this.$http({
+					url:'tags',
+					method:'PUT',
+					data:{
+						id:this.currentTagId,
+						text:this.currentTagText,
+						did:getApp().globalData.did
+					}
+				})
+				
+				if(res.code){
+					this.$refs.uToast.show({
+						message:'ok',
+						type:'success'
+					})
+					this.tagList[this.currentTagIndex].text = this.currentTagText
+				}
 			}
 		}
 	}
@@ -235,5 +291,20 @@
 	
 	.input{
 		background-color: "#ffffff";
+	}
+	.img{
+		width: 100rpx;
+		height: 100rpx;
+	}
+	.tag{
+		display: flex;
+		justify-content: space-around;
+		margin-top: 2%;
+		margin-bottom: 2%;
+	}
+	.popupUpdateTagText{
+		margin-top: 2%;
+		margin-right: 2%;
+		margin-bottom: 2%;
 	}
 </style>

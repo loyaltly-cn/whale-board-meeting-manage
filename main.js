@@ -3,9 +3,9 @@ import App from './App'
 // #ifndef VUE3
 import Vue from 'vue'
 Vue.config.productionTip = false
+// Vue.prototype.$api = 'https://api.bj-jiuqi.com/armApi/'
 Vue.prototype.$api = 'https://api.bj-jiuqi.com/armApi/'
 Vue.prototype.$header = {'Content-Type': 'application/x-www-form-urlencoded'}
-
 
 Vue.prototype.$snapShot =  function(obj){
 	let snapShotList = getApp().globalData.snapShotList
@@ -120,9 +120,6 @@ Vue.prototype.$refresh = async function(param){
 	if(!getApp().globalData.token){
 		await this.$meetingAuth()
 	}
-	console.log('meeting auth');
-	console.log(getApp().globalData.sid);
-	console.log(getApp().globalData.token);
 	//获取会议信息
 	let res = await this.$http({
 		url:'meetingDPQM',
@@ -155,6 +152,17 @@ Vue.prototype.$refresh = async function(param){
 		}
 	})
 	getApp().globalData.snapShotList = res.data
+	console.log(getApp().globalData.did)
+	res = await this.$http({
+		url:'tagDPQM',
+		method:'POST',
+		data:{
+			did:getApp().globalData.did
+		}
+	})
+	getApp().globalData.tagList = res.data.data
+	console.log(res.data.data);
+	console.log(getApp().globalData.tagList)
 	return true
 }
 

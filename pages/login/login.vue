@@ -1,5 +1,6 @@
 <template>
 	<view class="main">
+		<u-notify message="Hi uView" :show="true"></u-notify>
 		<text class="text">请输入管理密码</text>
 		<input class="input" password type="text"  v-model="pwd" placeholder="默认为0000" />
 		<button @click="verify()" class="button" type="primary" >login</button>
@@ -42,6 +43,7 @@
 							password:pwd
 						}
 					})
+					console.log(res);
 					if(res.data.length!=0){
 						getApp().globalData.did = res.data[0].id
 						uni.redirectTo({
