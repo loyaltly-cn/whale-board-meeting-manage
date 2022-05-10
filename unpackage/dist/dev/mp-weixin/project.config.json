@@ -16,7 +16,6 @@
     "uglifyFileName": false,
     "uploadWithSourceMap": true,
     "enhance": true,
-    "useMultiFrameRuntime": true,
     "showShadowRootInWxmlPanel": true,
     "packNpmManually": false,
     "packNpmRelationList": [],

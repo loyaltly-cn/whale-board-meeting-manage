@@ -35,7 +35,12 @@
 			"style": {
 				"navigationStyle": "custom"
 			}
-		}
+		},{
+            "path" : "pages/update/update",
+            "style": {
+            	"navigationStyle": "custom"
+            }
+        }
     ],
 	"globalStyle": {
 		"navigationBarBackgroundColor": "#00aaff",

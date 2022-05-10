@@ -8,15 +8,15 @@
 		</uni-nav-bar>
 		<view class="tag">
 			<view v-for="(item,index) in tagList">
-				<u-tag @click="touchTag(index)" :text="item.text" type="primary" shape="circle" :plain="true" ></u-tag>
+				<u-tag @click="update(item,'tag')" :text="item.text" type="primary" shape="circle" :plain="true" ></u-tag>
 			</view>
 		</view>
 		<u-cell-group v-for="(item,index) in list">
-			<u-cell :title="item.note"  >
+			<u-cell :title="item.note" >
 				<view slot="title" class="cellLeft">
 					<image class="img" :src="item.icon" mode=""></image>
 					<view class="cellText">
-						<text @click="note(index)">{{item.note}}</text>
+						<text @click="update(item,'note')">{{item.note}}</text>
 						<u--text size="25" type="info" :text="item.time"></u--text>
 					</view>
 				</view>
@@ -28,48 +28,15 @@
 				<u-cell-group title="设置" :border='false'>
 					<u-cell @click='searchDevice()' :cente='true' title="搜索蓝牙设备">
 						<u-icon slot="icon" size="32" name="search"></u-icon>
+						<u-icon slot="right-icon" size="32" name="arrow-right"></u-icon>
 					</u-cell>
-					<u-cell @click="update=true" :cente='true' icon="setting" title="修改管理密码">
+					<u-cell @click="updatePwd()" :cente='true' icon="setting" title="修改管理密码">
 						<u-icon slot="icon" size="32" name="lock-open"></u-icon>
+						<u-icon slot="right-icon" size="32" name="arrow-right"></u-icon>
 					</u-cell>
 				</u-cell-group>
 			</view>
-		</u-popup>
-		<u-popup :show="input"  round="50" @close="noteFinish(tmpIndex)" mode="center" >
-			<view class="input">
-				<u--input
-					:focus="true"
-					shape="circle"
-				    placeholder="请输入备注"
-					v-model="noteText"
-					inputAlign="center"
-				  ></u--input>
-			</view>			
-		</u-popup>
-		<u-popup :show="update"  round="50" @close="updatepwd()" mode="center" >
-			<view class="update">
-				<u--input
-					:focus="true"
-					type="password"
-					shape="circle"
-				    placeholder="请输入新密码"
-					v-model="updatepwdText"
-					inputAlign="center"
-				  ></u--input>
-			</view>	
-		</u-popup>
-		<u-popup :show="tagUpdateShow" @close="updateTag()" mode="center" round="30">
-			<view class="popupUpdateTagText">
-				 <u--input
-					placeholder="请输入名称"
-					:focus="true"
-					inputAlign="center"
-					v-model="currentTagText"
-				    border="none"
-				    clearable
-				  ></u--input>
-			</view>
-		</u-popup>
+		</u-popup> 
 	</view>
 </template> 
 
@@ -82,7 +49,6 @@
 				input:false,
 				noteText:'',
 				tmpIndex:0,
-				update:false,
 				updatepwdText:null,
 				tagList:[],
 				tagUpdateShow:false,
@@ -95,7 +61,7 @@
 			let index = res.target.dataset.index.index
 			let sid = this.list[index].sid
 			let playType = this.list[index].playType
-			let url = 'https://web.loyal.pub/meeting/#/?mid='+sid
+			let url = 'https://api.bj-jiuqi.com/meeting/#/live?mid='+sid
 			if (playType == 'live'){
 				getApp().globalData.sid = sid
 				await this.$meetingAuth()
@@ -123,6 +89,10 @@
 			this.$refs.popup.open('left')
 		},
 		async onLoad() {
+			
+		},
+		async onShow() {
+			this.popup = false
 			uni.hideLoading()
 			let res = await this.$http({
 				url:'meetingDPQM',
@@ -139,7 +109,10 @@
 						note:data.note+' 【会议进行中】',
 						playType:'live',
 						sid:data.id,
-						icon:'https://smartscreen-static.oss-cn-shanghai.aliyuncs.com/img/live.png'
+						icon:'https://smartscreen-static.oss-cn-shanghai.aliyuncs.com/img/live.png',
+						text:data.note,
+						id:data.id
+						
 					})
 				}else{
 					that.list.unshift({
@@ -147,7 +120,9 @@
 						note:data.note+' 【已结束】',
 						playType:'playBack',
 						sid:data.id,
-						icon:'https://smartscreen-static.oss-cn-shanghai.aliyuncs.com/img/meeting.png'
+						icon:'https://smartscreen-static.oss-cn-shanghai.aliyuncs.com/img/meeting.png',
+						text:data.note,
+						id:data.id
 					})
 				}
 				
@@ -163,113 +138,21 @@
 			this.tagList = res.data
 		},
 		methods: {
-			async note(index){
-				this.input = false
-				this.tmpIndex = index
-				this.input = true
-			},
-			async noteFinish(index){
-				this.input = false
-				if(this.noteText.length!=0){
-					let res = await this.$http({
-						url:'meetingDPQM',
-						method:'POST',
-						data:{
-							id:this.list[index].sid
-						}
-					})
-					res = res.data[0]
-					res.note = this.noteText
-					await this.$http({
-						url:'meetings',
-						method:'PUT',
-						data:res
-					})
-					this.$refs.uToast.show({
-						message:'ok',
-						type:'suceess'
-					})
-					this.list[index].note = this.noteText+' '+this.list[index].state 
-					this.noteText = ''
-				}else{
-					this.$refs.uToast.show({
-						message:'未输入',
-						type:'error'
-					})
-				}
-			},
 			searchDevice(){
 				uni.navigateTo({
 					url:'/pages/config/device'
 				})
 			},
-			async updatepwd(){
-				this.update = false
-				this.popup = false
-				if(this.updatepwdText!=null){
-					
-					uni.showLoading()
-					let res = await this.$http({
-						url:'deviceDPQM',
-						method:'POST',
-						data:{
-							mac:getApp().globalData.mac
-						}
-					})
-					let info = res.data[0]
-					info.password = this.updatepwdText
-					res = await this.$http({
-						url:'devices',
-						method:'PUT',
-						data:info
-					})
-					this.updatepwdText = null
-					uni.hideLoading()
-					this.$refs.uToast.show({
-						message:'ok',
-						type:'success'
-					})
-				}else{
-					this.$refs.uToast.show({
-						message:'未输入',
-						type:'error'
-					})
-				}
+			updatePwd(){
+				let obj = new Object
+				obj.id = getApp().globalData.did
+				this.update(obj,'pwd')
 			},
-			touchStart(event) {
-				console.log('start');
-				// console.log(event.changedTouches[0].clientX);
-				
-			},
-			touchEnd(event){
-				console.log('end');
-				// console.log(event.changedTouches[0].clientX);
-			},
-			touchTag(index){
-				this.currentTagText = this.tagList[index].text
-				this.currentTagId = this.tagList[index].id
-				this.currentTagIndex = index
-				this.tagUpdateShow = true
-			},
-			async updateTag(){
-				this.tagUpdateShow = false
-				let res = await this.$http({
-					url:'tags',
-					method:'PUT',
-					data:{
-						id:this.currentTagId,
-						text:this.currentTagText,
-						did:getApp().globalData.did
-					}
+			update(param,type){
+				let obj = encodeURIComponent(JSON.stringify(param))
+				uni.navigateTo({
+					url:'/pages/update/update?type='+type+'&obj='+obj
 				})
-				
-				if(res.code){
-					this.$refs.uToast.show({
-						message:'ok',
-						type:'success'
-					})
-					this.tagList[this.currentTagIndex].text = this.currentTagText
-				}
 			}
 		}
 	}
@@ -277,7 +160,8 @@
 
 <style>
 	.popup{
-		
+		display:table;
+		margin:0 auto;
 	}
 	.cellLeft{
 		display: flex;
@@ -300,11 +184,6 @@
 		display: flex;
 		justify-content: space-around;
 		margin-top: 2%;
-		margin-bottom: 2%;
-	}
-	.popupUpdateTagText{
-		margin-top: 2%;
-		margin-right: 2%;
 		margin-bottom: 2%;
 	}
 </style>

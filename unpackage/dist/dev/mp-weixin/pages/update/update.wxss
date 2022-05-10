@@ -1,0 +1,13 @@
+
+.main{
+	margin-top: 50%;
+	margin-left: 10%;
+	margin-right: 10%;
+}
+.bun{
+	margin-top: 10%;
+}
+.img{
+	margin-left: 40%;
+}
+

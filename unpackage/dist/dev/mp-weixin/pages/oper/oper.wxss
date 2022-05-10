@@ -1,5 +1,7 @@
 
 .popup{
+	display:table;
+	margin:0 auto;
 }
 .cellLeft{
 	display: flex;
@@ -21,11 +23,6 @@
 	display: flex;
 	justify-content: space-around;
 	margin-top: 2%;
-	margin-bottom: 2%;
-}
-.popupUpdateTagText{
-	margin-top: 2%;
-	margin-right: 2%;
 	margin-bottom: 2%;
 }
 

@@ -96,31 +96,28 @@ var components
 try {
   components = {
     uToast: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uview-ui/components/u-toast/u-toast */ "uni_modules/uview-ui/components/u-toast/u-toast").then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-toast/u-toast.vue */ 407))
+      return __webpack_require__.e(/*! import() | uni_modules/uview-ui/components/u-toast/u-toast */ "uni_modules/uview-ui/components/u-toast/u-toast").then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-toast/u-toast.vue */ 423))
     },
     uniNavBar: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 422))
+      return __webpack_require__.e(/*! import() | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 438))
     },
     uIcon: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 370))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-icon/u-icon */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-icon/u-icon")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-icon/u-icon.vue */ 386))
     },
     uTag: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-tag/u-tag */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-tag/u-tag")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-tag/u-tag.vue */ 429))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-tag/u-tag */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-tag/u-tag")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-tag/u-tag.vue */ 445))
     },
     uCellGroup: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-cell-group/u-cell-group */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-cell-group/u-cell-group")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-cell-group/u-cell-group.vue */ 354))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-cell-group/u-cell-group */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-cell-group/u-cell-group")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-cell-group/u-cell-group.vue */ 370))
     },
     uCell: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-cell/u-cell */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-cell/u-cell")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-cell/u-cell.vue */ 362))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-cell/u-cell */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-cell/u-cell")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-cell/u-cell.vue */ 378))
     },
     "u-Text": function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u--text/u--text */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u--text/u--text")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u--text/u--text.vue */ 395))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u--text/u--text */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u--text/u--text")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u--text/u--text.vue */ 411))
     },
     uPopup: function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-popup/u-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-popup/u-popup")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-popup/u-popup.vue */ 387))
-    },
-    "u-Input": function() {
-      return Promise.all(/*! import() | uni_modules/uview-ui/components/u--input/u--input */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u--input/u--input")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u--input/u--input.vue */ 401))
+      return Promise.all(/*! import() | uni_modules/uview-ui/components/u-popup/u-popup */[__webpack_require__.e("common/vendor"), __webpack_require__.e("uni_modules/uview-ui/components/u-popup/u-popup")]).then(__webpack_require__.bind(null, /*! @/uni_modules/uview-ui/components/u-popup/u-popup.vue */ 403))
     }
   }
 } catch (e) {
@@ -151,10 +148,6 @@ var render = function() {
 
     _vm.e1 = function($event) {
       _vm.popup = false
-    }
-
-    _vm.e2 = function($event) {
-      _vm.update = true
     }
   }
 }
@@ -232,39 +225,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 var _default =
 {
   data: function data() {
@@ -274,7 +234,6 @@ var _default =
       input: false,
       noteText: '',
       tmpIndex: 0,
-      update: false,
       updatepwdText: null,
       tagList: [],
       tagUpdateShow: false,
@@ -287,7 +246,7 @@ var _default =
               index = res.target.dataset.index.index;
               sid = _this.list[index].sid;
               playType = _this.list[index].playType;
-              url = 'https://web.loyal.pub/meeting/#/?mid=' + sid;if (!(
+              url = 'https://api.bj-jiuqi.com/meeting/#/live?mid=' + sid;if (!(
               playType == 'live')) {_context.next = 13;break;}
               getApp().globalData.sid = sid;_context.next = 8;return (
                 _this.$meetingAuth());case 8:_context.next = 10;return (
@@ -314,13 +273,17 @@ var _default =
   onNavigationBarButtonTap: function onNavigationBarButtonTap() {
     this.$refs.popup.open('left');
   },
-  onLoad: function onLoad() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {var res, that;return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:
-              uni.hideLoading();_context2.next = 3;return (
+  onLoad: function onLoad() {return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee2() {return _regenerator.default.wrap(function _callee2$(_context2) {while (1) {switch (_context2.prev = _context2.next) {case 0:case "end":return _context2.stop();}}}, _callee2);}))();
+
+  },
+  onShow: function onShow() {var _this2 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {var res, that;return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
+              _this2.popup = false;
+              uni.hideLoading();_context3.next = 4;return (
                 _this2.$http({
                   url: 'meetingDPQM',
                   method: 'POST',
                   data: {
-                    did: getApp().globalData.did } }));case 3:res = _context2.sent;
+                    did: getApp().globalData.did } }));case 4:res = _context3.sent;
 
 
               that = _this2;
@@ -331,7 +294,10 @@ var _default =
                     note: data.note + ' 【会议进行中】',
                     playType: 'live',
                     sid: data.id,
-                    icon: 'https://smartscreen-static.oss-cn-shanghai.aliyuncs.com/img/live.png' });
+                    icon: 'https://smartscreen-static.oss-cn-shanghai.aliyuncs.com/img/live.png',
+                    text: data.note,
+                    id: data.id });
+
 
                 } else {
                   that.list.unshift({
@@ -339,129 +305,39 @@ var _default =
                     note: data.note + ' 【已结束】',
                     playType: 'playBack',
                     sid: data.id,
-                    icon: 'https://smartscreen-static.oss-cn-shanghai.aliyuncs.com/img/meeting.png' });
+                    icon: 'https://smartscreen-static.oss-cn-shanghai.aliyuncs.com/img/meeting.png',
+                    text: data.note,
+                    id: data.id });
 
                 }
 
-              });_context2.next = 8;return (
+              });_context3.next = 9;return (
 
                 _this2.$http({
                   url: 'tagDPQM',
                   method: 'POST',
                   data: {
-                    did: getApp().globalData.did } }));case 8:res = _context2.sent;
+                    did: getApp().globalData.did } }));case 9:res = _context3.sent;
 
 
-              _this2.tagList = res.data;case 10:case "end":return _context2.stop();}}}, _callee2);}))();
+              _this2.tagList = res.data;case 11:case "end":return _context3.stop();}}}, _callee3);}))();
   },
   methods: {
-    note: function note(index) {var _this3 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee3() {return _regenerator.default.wrap(function _callee3$(_context3) {while (1) {switch (_context3.prev = _context3.next) {case 0:
-                _this3.input = false;
-                _this3.tmpIndex = index;
-                _this3.input = true;case 3:case "end":return _context3.stop();}}}, _callee3);}))();
-    },
-    noteFinish: function noteFinish(index) {var _this4 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee4() {var res;return _regenerator.default.wrap(function _callee4$(_context4) {while (1) {switch (_context4.prev = _context4.next) {case 0:
-                _this4.input = false;if (!(
-                _this4.noteText.length != 0)) {_context4.next = 14;break;}_context4.next = 4;return (
-                  _this4.$http({
-                    url: 'meetingDPQM',
-                    method: 'POST',
-                    data: {
-                      id: _this4.list[index].sid } }));case 4:res = _context4.sent;
-
-
-                res = res.data[0];
-                res.note = _this4.noteText;_context4.next = 9;return (
-                  _this4.$http({
-                    url: 'meetings',
-                    method: 'PUT',
-                    data: res }));case 9:
-
-                _this4.$refs.uToast.show({
-                  message: 'ok',
-                  type: 'suceess' });
-
-                _this4.list[index].note = _this4.noteText + ' ' + _this4.list[index].state;
-                _this4.noteText = '';_context4.next = 15;break;case 14:
-
-                _this4.$refs.uToast.show({
-                  message: '未输入',
-                  type: 'error' });case 15:case "end":return _context4.stop();}}}, _callee4);}))();
-
-
-    },
     searchDevice: function searchDevice() {
       uni.navigateTo({
         url: '/pages/config/device' });
 
     },
-    updatepwd: function updatepwd() {var _this5 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee5() {var res, info;return _regenerator.default.wrap(function _callee5$(_context5) {while (1) {switch (_context5.prev = _context5.next) {case 0:
-                _this5.update = false;
-                _this5.popup = false;if (!(
-                _this5.updatepwdText != null)) {_context5.next = 17;break;}
-
-                uni.showLoading();_context5.next = 6;return (
-                  _this5.$http({
-                    url: 'deviceDPQM',
-                    method: 'POST',
-                    data: {
-                      mac: getApp().globalData.mac } }));case 6:res = _context5.sent;
-
-
-                info = res.data[0];
-                info.password = _this5.updatepwdText;_context5.next = 11;return (
-                  _this5.$http({
-                    url: 'devices',
-                    method: 'PUT',
-                    data: info }));case 11:res = _context5.sent;
-
-                _this5.updatepwdText = null;
-                uni.hideLoading();
-                _this5.$refs.uToast.show({
-                  message: 'ok',
-                  type: 'success' });_context5.next = 18;break;case 17:
-
-
-                _this5.$refs.uToast.show({
-                  message: '未输入',
-                  type: 'error' });case 18:case "end":return _context5.stop();}}}, _callee5);}))();
-
-
+    updatePwd: function updatePwd() {
+      var obj = new Object();
+      obj.id = getApp().globalData.did;
+      this.update(obj, 'pwd');
     },
-    touchStart: function touchStart(event) {
-      console.log('start');
-      // console.log(event.changedTouches[0].clientX);
+    update: function update(param, type) {
+      var obj = encodeURIComponent(JSON.stringify(param));
+      uni.navigateTo({
+        url: '/pages/update/update?type=' + type + '&obj=' + obj });
 
-    },
-    touchEnd: function touchEnd(event) {
-      console.log('end');
-      // console.log(event.changedTouches[0].clientX);
-    },
-    touchTag: function touchTag(index) {
-      this.currentTagText = this.tagList[index].text;
-      this.currentTagId = this.tagList[index].id;
-      this.currentTagIndex = index;
-      this.tagUpdateShow = true;
-    },
-    updateTag: function updateTag() {var _this6 = this;return _asyncToGenerator( /*#__PURE__*/_regenerator.default.mark(function _callee6() {var res;return _regenerator.default.wrap(function _callee6$(_context6) {while (1) {switch (_context6.prev = _context6.next) {case 0:
-                _this6.tagUpdateShow = false;_context6.next = 3;return (
-                  _this6.$http({
-                    url: 'tags',
-                    method: 'PUT',
-                    data: {
-                      id: _this6.currentTagId,
-                      text: _this6.currentTagText,
-                      did: getApp().globalData.did } }));case 3:res = _context6.sent;
-
-
-
-                if (res.code) {
-                  _this6.$refs.uToast.show({
-                    message: 'ok',
-                    type: 'success' });
-
-                  _this6.tagList[_this6.currentTagIndex].text = _this6.currentTagText;
-                }case 5:case "end":return _context6.stop();}}}, _callee6);}))();
     } } };exports.default = _default;
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["default"]))
 

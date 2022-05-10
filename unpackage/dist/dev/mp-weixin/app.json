@@ -5,7 +5,8 @@
     "pages/oper/oper",
     "pages/player/live",
     "pages/player/playBack",
-    "pages/player/verify"
+    "pages/player/verify",
+    "pages/update/update"
   ],
   "subPackages": [],
   "window": {
