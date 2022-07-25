@@ -1,7 +1,7 @@
 <script>
 	export default {
 		async onLaunch(){
-			
+			console.log(this.$u.config.v);
 		},
 		onShow: function() {
 			

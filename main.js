@@ -64,7 +64,6 @@ Vue.prototype.$http = async function(obj){
 	if(!getApp().globalData.token){
 		await this.$deviceAuth()
 	}
-	console.log('ok');
 	obj.data.token = getApp().globalData.token
 	var [err, res] = await uni.request({
 		url: this.$api+obj.url,
@@ -82,7 +81,6 @@ Vue.prototype.$token = async function(obj){
 		header:this.$header,
 		data:obj.data
 	});
-	console.log(res.data.data);
 	getApp().globalData.token = res.data.data
 }
 
@@ -129,7 +127,6 @@ Vue.prototype.$refresh = async function(param){
 			token:getApp().globalData.token
 		}
 	})
-	console.log('test');
 	getApp().globalData.did = res.data[0].did		//设备号
 	getApp().globalData.type = res.data[0].state	//会议状态
 	let ws = 'wss://'+res.data[0].url+'/'+sid+'/tmp'//wss
@@ -151,8 +148,8 @@ Vue.prototype.$refresh = async function(param){
 			mid:sid
 		}
 	})
+	console.log(res.data);
 	getApp().globalData.snapShotList = res.data
-	console.log(getApp().globalData.did)
 	res = await this.$http({
 		url:'tagDPQM',
 		method:'POST',
@@ -161,8 +158,6 @@ Vue.prototype.$refresh = async function(param){
 		}
 	})
 	getApp().globalData.tagList = res.data.data
-	console.log(res.data.data);
-	console.log(getApp().globalData.tagList)
 	return true
 }
 

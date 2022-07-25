@@ -1,5 +1,5 @@
 {
-  "navigationBarTitleText": "终端设备管理",
+  "navigationBarTitleText": "会议管理",
   "usingComponents": {
     "u-notify": "/uni_modules/uview-ui/components/u-notify/u-notify"
   }

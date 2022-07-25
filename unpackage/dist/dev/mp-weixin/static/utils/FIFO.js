@@ -5,6 +5,7 @@ function liveFifo(){
 }
 
 liveFifo.prototype.set = function(value){
+	// console.info(value)
 	this.data.push(value)
 }
 

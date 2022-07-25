@@ -8,7 +8,7 @@
             "path" : "pages/login/login",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "终端设备管理"
+                "navigationBarTitleText": "会议管理"
             }
         },{
 			"path": "pages/config/device",

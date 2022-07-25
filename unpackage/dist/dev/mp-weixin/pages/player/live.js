@@ -1,25 +1,27 @@
 (global["webpackJsonp"] = global["webpackJsonp"] || []).push([["pages/player/live"],{
 
 /***/ 331:
-/*!*****************************************************************************!*\
-  !*** C:/Projects/uniapp/ARMManage/main.js?{"page":"pages%2Fplayer%2Flive"} ***!
-  \*****************************************************************************/
+/*!****************************************************************************!*\
+  !*** C:/project/uniapp/ARMManage/main.js?{"page":"pages%2Fplayer%2Flive"} ***!
+  \****************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(createPage) {__webpack_require__(/*! uni-pages */ 8);
-var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 3));
-var _live = _interopRequireDefault(__webpack_require__(/*! ./pages/player/live.vue */ 332));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };}wx.__webpack_require_UNI_MP_PLUGIN__ = __webpack_require__;
-createPage(_live.default);
+
+
+var _vue = _interopRequireDefault(__webpack_require__(/*! vue */ 4));
+var _live = _interopRequireDefault(__webpack_require__(/*! ./pages/player/live.vue */ 332));function _interopRequireDefault(obj) {return obj && obj.__esModule ? obj : { default: obj };} // @ts-ignore
+wx.__webpack_require_UNI_MP_PLUGIN__ = __webpack_require__;createPage(_live.default);
 /* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./node_modules/@dcloudio/uni-mp-weixin/dist/index.js */ 1)["createPage"]))
 
 /***/ }),
 
 /***/ 332:
-/*!**********************************************************!*\
-  !*** C:/Projects/uniapp/ARMManage/pages/player/live.vue ***!
-  \**********************************************************/
+/*!*********************************************************!*\
+  !*** C:/project/uniapp/ARMManage/pages/player/live.vue ***!
+  \*********************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -58,9 +60,9 @@ component.options.__file = "pages/player/live.vue"
 /***/ }),
 
 /***/ 333:
-/*!*****************************************************************************************!*\
-  !*** C:/Projects/uniapp/ARMManage/pages/player/live.vue?vue&type=template&id=190c631e& ***!
-  \*****************************************************************************************/
+/*!****************************************************************************************!*\
+  !*** C:/project/uniapp/ARMManage/pages/player/live.vue?vue&type=template&id=190c631e& ***!
+  \****************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -80,9 +82,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 334:
-/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Projects/uniapp/ARMManage/pages/player/live.vue?vue&type=template&id=190c631e& ***!
-  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--16-0!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/template.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-uni-app-loader/page-meta.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/project/uniapp/ARMManage/pages/player/live.vue?vue&type=template&id=190c631e& ***!
+  \****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns, recyclableRender, components */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -95,8 +97,8 @@ __webpack_require__.r(__webpack_exports__);
 var components
 try {
   components = {
-    uniNavBar: function() {
-      return __webpack_require__.e(/*! import() | uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar */ "uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar").then(__webpack_require__.bind(null, /*! @/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar.vue */ 438))
+    uAlertTips: function() {
+      return Promise.resolve().then(function webpackMissingModule() { var e = new Error("Cannot find module '@/uni_modules/uview-ui/components/u-alert-tips/u-alert-tips.vue'"); e.code = 'MODULE_NOT_FOUND'; throw e; })
     }
   }
 } catch (e) {
@@ -130,9 +132,9 @@ render._withStripped = true
 /***/ }),
 
 /***/ 335:
-/*!***********************************************************************************!*\
-  !*** C:/Projects/uniapp/ARMManage/pages/player/live.vue?vue&type=script&lang=js& ***!
-  \***********************************************************************************/
+/*!**********************************************************************************!*\
+  !*** C:/project/uniapp/ARMManage/pages/player/live.vue?vue&type=script&lang=js& ***!
+  \**********************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -146,14 +148,16 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 336:
-/*!******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Projects/uniapp/ARMManage/pages/player/live.vue?vue&type=script&lang=js& ***!
-  \******************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--12-1!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/script.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/project/uniapp/ARMManage/pages/player/live.vue?vue&type=script&lang=js& ***!
+  \*****************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
 /* WEBPACK VAR INJECTION */(function(uni) {Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0;
+
+
 
 
 
@@ -174,9 +178,9 @@ var _FIFO = __webpack_require__(/*! @/static/utils/FIFO */ 337); //
 //
 //
 //
-var _live = new _FIFO.liveFifo();var playBack = new _FIFO.playBackFifo();var lastPoint = 0;var flag = false;var testdata = "global test data";var _default = { data: function data() {return { nowPenColor: '#000000',
-      canvasStyle: {},
-      show: false,
+//
+//
+var _live = new _FIFO.liveFifo();var playBack = new _FIFO.playBackFifo();var lastPoint = 0;var flag = false;var testdata = "global test data";var _default = { data: function data() {return { nowPenColor: '#000000', canvasStyle: {}, show: false,
       canvasHeight: 0,
       canvasWidth: 0,
       number: 0,
@@ -223,6 +227,7 @@ var _live = new _FIFO.liveFifo();var playBack = new _FIFO.playBackFifo();var las
     // console.log('onReady');	
     var that = this;
     uni.onSocketMessage(function (res) {
+
       var data = Array.prototype.map.call(new Uint8Array(res.data), function (x) {return ('00' + x.toString(16)).slice(-2);}).join('');
       // console.log("接收数量:"+(that.number++)+"	数据:"+data);
       that.dataConvert(data);
@@ -233,6 +238,7 @@ var _live = new _FIFO.liveFifo();var playBack = new _FIFO.playBackFifo();var las
   },
   methods: {
     dataConvert: function dataConvert(data) {
+      // console.info(data.length)
       if (data.length > 10) {
         var x = this.$hexStrToDEC(data.substr(2, 4));
         var y = this.$hexStrToDEC(data.substr(6, 4));
@@ -365,15 +371,17 @@ var _live = new _FIFO.liveFifo();var playBack = new _FIFO.playBackFifo();var las
 
           break;
         case 12: //会议结束
-          // console.log('会议结束')
-          uni.showLoading({
-            title: '会议已结束' });
-
+          this.endMetting();
           break;
         default:
           //其他情况
           break;}
 
+    },
+    endMetting: function endMetting() {
+      flag = false;
+
+      console.log('会议结束');
     },
     draw: function draw(data) {
       if (lastPoint != 0) {
@@ -425,9 +433,9 @@ var _live = new _FIFO.liveFifo();var playBack = new _FIFO.playBackFifo();var las
 /***/ }),
 
 /***/ 338:
-/*!*******************************************************************************************!*\
-  !*** C:/Projects/uniapp/ARMManage/pages/player/live.vue?vue&type=style&index=0&lang=css& ***!
-  \*******************************************************************************************/
+/*!******************************************************************************************!*\
+  !*** C:/project/uniapp/ARMManage/pages/player/live.vue?vue&type=style&index=0&lang=css& ***!
+  \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -441,9 +449,9 @@ __webpack_require__.r(__webpack_exports__);
 /***/ }),
 
 /***/ 339:
-/*!***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/Projects/uniapp/ARMManage/pages/player/live.vue?vue&type=style&index=0&lang=css& ***!
-  \***********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
+/*!**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js??ref--6-oneOf-1-0!./node_modules/css-loader/dist/cjs.js??ref--6-oneOf-1-1!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib/loaders/stylePostLoader.js!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/webpack-preprocess-loader??ref--6-oneOf-1-2!./node_modules/postcss-loader/src??ref--6-oneOf-1-3!./node_modules/@dcloudio/vue-cli-plugin-uni/packages/vue-loader/lib??vue-loader-options!./node_modules/@dcloudio/webpack-uni-mp-loader/lib/style.js!C:/project/uniapp/ARMManage/pages/player/live.vue?vue&type=style&index=0&lang=css& ***!
+  \**********************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 

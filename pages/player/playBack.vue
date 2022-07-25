@@ -1,6 +1,6 @@
 <template>
 	<view >
-		<uni-nav-bar shadow title="回放" color="#ffffff" background-color="#00aaff" :fixed="true" :statusBar="true"></uni-nav-bar>
+		<uni-nav-bar shadow title="会议回放" color="#ffffff" background-color="#00aaff" :fixed="true" :statusBar="true"></uni-nav-bar>
 		<view v-show="show" class="main">
 			<canvas class="SmartScreen" canvas-id="SmartScreen"  :style="canvasStyle"> </canvas>
 		</view>
@@ -83,13 +83,14 @@
 		},
 		onReady(){
 			let that = this
+			uni.connectSocket({
+				url:getApp().globalData.ws
+			});
 			uni.onSocketMessage(function(res){
+				console.log('websocket')
 				let data = Array.prototype.map.call(new Uint8Array(res.data), x => ('00' + x.toString(16)).slice(-2)).join('')
 				// console.log("接收数量:"+(that.number++)+"	数据:"+data);
 				that.dataConvert(data)
-			});
-			uni.connectSocket({
-				url:getApp().globalData.ws
 			});
 		},	
 		methods: {

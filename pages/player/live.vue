@@ -1,10 +1,12 @@
 <template>
 	<view>
-		<uni-nav-bar shadow title="直播" color="#ffffff" background-color="#00aaff" :fixed="true" :statusBar="true"></uni-nav-bar>
+		<uni-nav-bar shadow title="会议已结束" color="#ffffff" background-color="#00aaff" :fixed="true" :statusBar="true"></uni-nav-bar>
+		<view>
+			<u-alert-tips type="warning" title="提示" description="会议已结束"></u-alert-tips>
+		</view>
 		<view v-show="show" class="main">
 			<canvas class="SmartScreen" canvas-id="SmartScreen"  :style="canvasStyle"> </canvas>
 		</view>
-		
 	</view>
 </template>
 
@@ -68,6 +70,7 @@
 			// console.log('onReady');	
 			let that = this
 			uni.onSocketMessage(function(res){
+
 				let data = Array.prototype.map.call(new Uint8Array(res.data), x => ('00' + x.toString(16)).slice(-2)).join('')
 				// console.log("接收数量:"+(that.number++)+"	数据:"+data);
 				that.dataConvert(data)
@@ -78,6 +81,7 @@
 		},	
 		methods: {
 			dataConvert(data){
+				// console.info(data.length)
 				if(data.length>10){
 					let x = this.$hexStrToDEC(data.substr(2,4))
 					let y = this.$hexStrToDEC(data.substr(6,4))
@@ -210,15 +214,17 @@
 						
 						break;
 					case 12://会议结束
-						// console.log('会议结束')
-						uni.showLoading({
-							title:'会议已结束'
-						})
+					this.endMetting()
 						break;
 					default:
 						//其他情况
 						break
 				}
+			},
+			endMetting(){
+				flag = false
+				
+				console.log('会议结束')
 			},
 			draw(data){
 				if(lastPoint != 0){

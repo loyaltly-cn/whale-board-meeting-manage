@@ -1,6 +1,6 @@
 {
   "navigationStyle": "custom",
   "usingComponents": {
-    "uni-nav-bar": "/uni_modules/uni-nav-bar/components/uni-nav-bar/uni-nav-bar"
+    "u-alert-tips": "/uni_modules/uview-ui/components/u-alert-tips/u-alert-tips"
   }
 }
