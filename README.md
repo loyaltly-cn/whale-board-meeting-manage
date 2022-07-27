@@ -21,6 +21,7 @@
 - 所有的静态资源都在存放在OSS上
 - 小程序未开启画面与音频同步
 - 每次进入链接时都会去拉取设备对应的参数 从而同步 canvas width height 以及 viewport  
+- <a href="https://xinxuemo-images.oss-cn-shanghai.aliyuncs.com/%E6%99%BA%E8%83%BD%E4%BA%A4%E4%BA%92%E7%99%BD%E6%9D%BF%E7%BB%88%E7%AB%AF%E5%9D%90%E6%A0%87%E9%9B%86%E5%BC%80%E5%8F%91%E6%96%87%E6%A1%A3.pdf" target="_blank"> pdf document </a>
 
 canvas 
 ```js
