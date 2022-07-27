@@ -6,6 +6,12 @@
 - <a href="https://cn.vuejs.org/" target="_blank"> vue2 </a>
 - <a href="https://uniapp.dcloud.io/component/canvas.html#canvas" target="_blank"> uniapp canvas </a>
 
+## live implementation process
+- connect ws 
+- ws res convert
+- insert fifo
+- `live flge = true`
+
 ## tips
 - 使用 <a href="https://www.dcloud.io/hbuilderx.html" target="_blank"> **HBuilder X** </a> 编写
 - uview 使用 Dcloud插件 HbuilderX 导入 
