@@ -11,6 +11,7 @@
 - ws res convert
 - insert fifo
 - `live flge = true`
+> 通过 flge 来控制画面的播放
 
 ## tips
 - 使用 <a href="https://www.dcloud.io/hbuilderx.html" target="_blank"> **HBuilder X** </a> 编写
